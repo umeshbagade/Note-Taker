@@ -1,0 +1,23 @@
+.get-input{
+    text-align: center;
+}
+
+.get-input input{
+    height: 20px;
+    outline: none;
+    border: 1px solid black;
+    border-radius: 10px;
+    margin: 10px;
+    font-size: large;
+    padding: 10px;
+}
+.get-input button{
+    height: 42px;
+    width: 100px;
+    font-size: 1rem;
+    border-radius: 10px;
+    border: 1px solid black;
+}
+.get-input button:hover{
+    background-color: #76BA99;
+}

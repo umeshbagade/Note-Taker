@@ -1,24 +1,39 @@
-import logo from './logo.svg';
-import './App.css';
 
+import { useState } from 'react';
+import './App.css';
+import ListNotes from './Components/ListNotes';
+import NewNote from './Components/NewNote';
 function App() {
+
+
+  const [tasks, setTasks] = useState([])
+
+  const addNewTask = (newTask)=>{
+   
+    // const temp = tasks
+    // temp.push(newTask)
+    // setTasks(temp)
+   
+    setTasks(tasks.concat(newTask))
+  }
+  const deleteTask = (id) =>{
+
+        const deletedTasks = tasks.filter((task) => task.id!==id)
+
+        setTasks(deletedTasks)
+
+  }
+
+
+  
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <>
+     <h1>Note Taker</h1>
+
+      <NewNote addNewTask={addNewTask}/>
+      <ListNotes tasks={tasks}  deleteTask={deleteTask}/>
+
+    </>
   );
 }
 
